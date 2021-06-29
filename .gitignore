@@ -1,3 +1,15 @@
 #Download the embedder model from https://mlunicampania.gitlab.io/italian-word2vec/
 
 SG-300-W10N20E50
+
+__pycache__/
+
+.vscode
+
+.ipynb_checkpoints
+
+.DS_Store
+
+env
+
+models/bert
