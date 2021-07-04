@@ -4,6 +4,7 @@ import tensorflow as tf
 from tensorflow import keras
 
 modelName = "2_layers_biLSTM"
+features = 300
 
 xTrain = np.load('data/x_train.npy',allow_pickle=True)
 yTrain = np.load('data/y_train.npy',allow_pickle=True)
@@ -11,14 +12,12 @@ yTrain = np.load('data/y_train.npy',allow_pickle=True)
 xTrain = keras.preprocessing.sequence.pad_sequences(
     xTrain, padding="post", dtype=float)
 maxTrainingLength = len(xTrain[0])
-features = 300
 xTrain = np.reshape(xTrain,(-1, maxTrainingLength, features))
 
 xVal = np.load('data/x_val.npy',allow_pickle=True)
 xVal = keras.preprocessing.sequence.pad_sequences(
     xVal, padding="post", dtype=float)
 maxValLength = len(xVal[0])
-features = 300
 xVal = np.reshape(xVal,(-1, maxValLength, features))
 yVal = np.load('data/y_val.npy',allow_pickle=True)
 
